@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project Version="1">
+  <Options Caption="Новый проект" Comment="Проект создан мастером проектов" Version="1.00" Author="Copyright © 2021 Dm" Code="0" SubCode="0" WebCode="0" WebSubCode="0" Frontal="True"/>
+  <Usage>
+    <Project Name="Com"/>
+  </Usage>
+  <Groups>
+    <Group Name="Записи" Type="Documents" Disabled="False"/>
+    <Group Name="Формы" Type="Blanks" Disabled="False"/>
+    <Group Name="Картотеки" Type="Cards" Disabled="False"/>
+    <Group Name="ServerClasses" Type="Classes" Disabled="False"/>
+  </Groups>
+</Project>

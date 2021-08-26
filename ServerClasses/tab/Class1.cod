@@ -1,0 +1,25 @@
+class inherited Com.Tab.SysFields "Картотека записи";
+import Com classes Def;
+
+
+inclass public
+#override;
+var RecordClass  :Class Rec.IRecord := rec.Class1;
+#override;
+var GroupClass   :Class Rec.IRecord := rec.Class1;
+
+
+InObject Private
+
+#override;
+var Current: rec.Class1;
+
+#override;
+proc Init;
+    Inherited Init;
+    AddFieldCol( "@Код", 30, , Current.Code );
+    AddFieldCol( "@Наименование", 30, , Current.Name );
+   -- AddSubtable(Current.SubTbl );
+end;
+
+end

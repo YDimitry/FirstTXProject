@@ -1,0 +1,11 @@
+record Запись1 inherited Com.Base.SysFields title "Тестовая запись";
+  field Code : String;
+  field Name : string;
+
+  struct subTbl Array Integer title 'Подтаблица тестовой записи';
+    field field1 :string;
+    field field2 :string;
+    field field3 :string;
+  end;
+
+end;

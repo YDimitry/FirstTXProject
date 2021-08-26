@@ -1,0 +1,13 @@
+class inherited Com.Frm.SysFields "Пробная форма";
+import Com classes Def;
+
+inclass public
+#override;
+var RecordClass :Class Com.Rec.IRecord := rec.Class1 ;
+
+--inobject private
+--#override;
+--var FRecord: rec.Class1;
+
+
+end

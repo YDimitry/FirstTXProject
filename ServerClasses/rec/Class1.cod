@@ -1,0 +1,32 @@
+class inherited Com.Rec.SysFields "Интерфейс тестовой записи";
+import Com classes Def;
+
+inclass Public
+#override;
+var RecordClass :Class Record := Запись1;
+#override;
+var EditorClass :Class Com.Frm.IEditor := Frm.Class1;
+#override;
+var CardformClass :Class Frm.ICardForm := Tab.Class1;
+
+
+
+inobject public
+var Code : IField;
+var Name : IField;
+var SubTbl : ISubtable;
+
+
+InObject Private
+
+#override;
+proc Init;
+  inherited Init;
+  Code = AddField("Code");
+  Name = AddField("Name");
+ -- SubTbl = AddSubtable("SubTbl",Запись1.subTbl);
+
+end;
+
+
+end

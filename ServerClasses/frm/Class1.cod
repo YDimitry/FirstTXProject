@@ -1,0 +1,28 @@
+class inherited Com.Frm.SysFields "Форма-редактор записи";
+import Com.Def;
+
+inclass public
+#override;
+var RecordClass :Class Com.Rec.IRecord := rec.Class1 ;
+
+inobject public
+
+var Code: IEdit;
+var Name: IEdit;
+
+inObject private
+
+#override;
+var FRecord: rec.Class1;
+
+proc init;
+  inherited init;
+     with RootFrame.AddNewFrame do
+        SetColumns ([labelW, 0.9]);
+        Code = AddFieldEdit("Код", FRecord.Code);
+        Name = AddFieldEdit("Название", FRecord.Name);
+    end;
+end;
+
+
+end

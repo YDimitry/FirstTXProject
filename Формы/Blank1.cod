@@ -1,0 +1,56 @@
+class "Форма импорта XML файла";
+
+inclass private
+
+var Code: String;
+var Name: String;
+
+inobject
+
+
+proc importXMLFile;
+  var xmlParcer,rows:AutoObject;
+  var fName :String;
+
+
+  if ChooseFile(fName, "Выбор файла", "Данные в формате xml|*.xml")
+  <> cmOk then
+    return;
+  end;
+
+
+  try
+    xmlParcer = AutoObject.Create("Msxml2.DOMDocument");
+    xmlParcer.load(fName);
+
+    rows = xmlParcer.documentElement.childNodes;
+
+    var record = Запись1.Create;
+
+    record.Code = Code; -- Random(1000);
+    record.Name = Name; -- "данные из " +fName;
+
+    for var i = 0..rows.length-1 do
+      var n = record.subTbl.add;
+      record.subTbl[n].field1 = rows.item(i).getAttribute("attr1");
+      record.subTbl[n].field2 = rows.item(i).getAttribute("attr2");
+      record.subTbl[n].field3 = rows.item(i).getAttribute("attr3");
+
+    end;
+    record.post;
+    var doc:Record;
+    КартЗапись11.ShowFormEx(doc,'',Window.PopupWindow) ;
+  except
+    message('Не удается создать OLE-объект');
+  end;
+
+end;
+--------------------------------------------------------------------------------
+--{ Обработчики событий бланка
+
+  proc importFromXMLButtonOnClick(Sender :Button);
+    importXMLFile;
+  end;
+--}
+
+end
